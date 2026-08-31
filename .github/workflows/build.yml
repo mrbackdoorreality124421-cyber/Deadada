@@ -32,9 +32,9 @@ jobs:
 
       - name: Setup Stockfish 18 Native Binaries
         run: |
-          mkdir -p app/src/main/jniLibs/arm64-v8a app/src/main/jniLibs/armeabi-v7a app/src/main/jniLibs/x86_64
+          mkdir -p app/src/main/jniLibs/arm64-v8a app/src/main/jniLibs/armeabi-v7a
           
-          # Download 64-bit ARM (arm64-v8a)
+          # Download 64-bit ARM (arm64-v8a for modern Android devices)
           curl -fSL -o /tmp/sf_arm64.tar https://github.com/official-stockfish/Stockfish/releases/download/sf_18/stockfish-android-armv8.tar
           tar -xf /tmp/sf_arm64.tar -C /tmp
           mv /tmp/stockfish/stockfish-android-armv8 app/src/main/jniLibs/arm64-v8a/libstockfish.so
@@ -43,11 +43,6 @@ jobs:
           curl -fSL -o /tmp/sf_arm32.tar https://github.com/official-stockfish/Stockfish/releases/download/sf_18/stockfish-android-armv7.tar
           tar -xf /tmp/sf_arm32.tar -C /tmp
           mv /tmp/stockfish/stockfish-android-armv7 app/src/main/jniLibs/armeabi-v7a/libstockfish.so
-
-          # Download x86_64 (Emulators)
-          curl -fSL -o /tmp/sf_x86_64.tar https://github.com/official-stockfish/Stockfish/releases/download/sf_18/stockfish-ubuntu-x86-64.tar
-          tar -xf /tmp/sf_x86_64.tar -C /tmp
-          mv /tmp/stockfish/stockfish-ubuntu-x86-64 app/src/main/jniLibs/x86_64/libstockfish.so
 
           chmod +x app/src/main/jniLibs/*/libstockfish.so
           ls -lh app/src/main/jniLibs/*
