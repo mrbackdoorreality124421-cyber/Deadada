@@ -1,0 +1,6 @@
+{
+  "name": "Chess Master Pro",
+  "description": "Complete Android chess app in Helper Mode powered by official Stockfish 18 engine, move hints, dynamic arrows, and adaptive layouts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
